@@ -6,129 +6,238 @@
     <title>Mon CV - Votre Nom</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            background-color: #f4f4f4;
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f9f9;
             margin: 0;
             padding: 0;
-        }
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 10px 0;
-            text-align: center;
-        }
-        .container {
-            width: 80%;
-            margin: 20px auto;
-            background-color: #fff;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        h1, h2 {
             color: #333;
         }
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        header h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+        .tabs {
+            display: flex;
+            justify-content: center;
+            background-color: #34495e;
+            padding: 10px 0;
+            margin: 0;
+        }
+        .tab {
+            padding: 15px;
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
+            text-align: center;
+            flex: 1;
+            background-color: #34495e;
+            transition: background-color 0.3s;
+        }
+        .tab:hover {
+            background-color: #2c3e50;
+        }
+        .tab.active {
+            background-color: #2980b9;
+        }
+        .container {
+            width: 85%;
+            margin: 20px auto;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+        }
+        h2 {
+            color: #2980b9;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+        }
+        p {
+            line-height: 1.8;
+            font-size: 1.1em;
+            color: #555;
+        }
         section {
-            margin-bottom: 20px;
+            margin-bottom: 30px;
         }
         .skills, .experience, .education {
             list-style-type: none;
             padding: 0;
         }
         .skills li, .experience li, .education li {
-            background-color: #f4f4f4;
-            margin: 5px 0;
-            padding: 10px;
-            border-radius: 5px;
+            background-color: #ecf0f1;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
         }
-        footer {
-            text-align: center;
-            padding: 10px;
-            background-color: #333;
-            color: #fff;
-            position: absolute;
-            bottom: 0;
-            width: 100%;
+        .skills li:hover, .experience li:hover, .education li:hover {
+            background-color: #bdc3c7;
         }
         .contact-info {
             display: flex;
             justify-content: space-around;
-            padding: 10px;
-            background-color: #333;
-            color: #fff;
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #2c3e50;
+            color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .contact-info div {
+            text-align: center;
+        }
+        .contact-info h3 {
+            margin-bottom: 10px;
         }
         .contact-info a {
-            color: #fff;
+            color: #ecf0f1;
             text-decoration: none;
+            font-size: 1.2em;
+        }
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #34495e;
+            color: white;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        .card {
+            background-color: #3498db;
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
+        .card h3 {
+            margin-top: 0;
         }
     </style>
 </head>
 <body>
     <header>
         <h1>Mon CV - Votre Nom</h1>
+        <p>Un aperçu de mon parcours et de mes compétences</p>
     </header>
 
+    <div class="tabs">
+        <a href="#about" class="tab active">À propos</a>
+        <a href="#skills" class="tab">Compétences</a>
+        <a href="#experience" class="tab">Expérience</a>
+        <a href="#education" class="tab">Éducation</a>
+        <a href="#contact" class="tab">Contact</a>
+    </div>
+
     <div class="container">
-        <section>
+        <section id="about">
             <h2>À propos de moi</h2>
-            <p>Bonjour, je suis [Votre Nom], un(e) professionnel(le) passionné(e) par [domaine d'activité]. Mon parcours m'a permis de développer une expertise en [compétences principales]. Je cherche toujours à relever de nouveaux défis et à évoluer dans ma carrière.</p>
+            <p>Bonjour, je suis [Votre Nom], un(e) professionnel(le) passionné(e) par [domaine d'activité]. Mon parcours m'a permis de développer une expertise en [compétences principales]. Je cherche toujours à relever de nouveaux défis et à évoluer dans ma carrière. Je suis motivé(e), créatif(ve), et déterminé(e) à apporter une réelle valeur ajoutée à mes projets.</p>
         </section>
 
-        <section>
+        <section id="skills">
             <h2>Compétences</h2>
             <ul class="skills">
-                <li>Compétence 1</li>
-                <li>Compétence 2</li>
-                <li>Compétence 3</li>
-                <li>Compétence 4</li>
+                <li>Compétence 1 - Description</li>
+                <li>Compétence 2 - Description</li>
+                <li>Compétence 3 - Description</li>
+                <li>Compétence 4 - Description</li>
             </ul>
         </section>
 
-        <section>
+        <section id="experience">
             <h2>Expérience professionnelle</h2>
             <ul class="experience">
                 <li>
-                    <h3>Poste 1 - Entreprise</h3>
-                    <p>Années: 20XX - 20YY</p>
-                    <p>Description du poste et des responsabilités.</p>
+                    <div class="card">
+                        <h3>Poste 1 - Entreprise</h3>
+                        <p>Années: 20XX - 20YY</p>
+                        <p>Description du poste et des responsabilités. Ce rôle m'a permis de développer des compétences en gestion de projet et en travail d'équipe.</p>
+                    </div>
                 </li>
                 <li>
-                    <h3>Poste 2 - Entreprise</h3>
-                    <p>Années: 20YY - 20ZZ</p>
-                    <p>Description du poste et des responsabilités.</p>
+                    <div class="card">
+                        <h3>Poste 2 - Entreprise</h3>
+                        <p>Années: 20YY - 20ZZ</p>
+                        <p>Description du poste et des responsabilités. J'ai renforcé mes compétences en communication et en leadership.</p>
+                    </div>
                 </li>
             </ul>
         </section>
 
-        <section>
+        <section id="education">
             <h2>Éducation</h2>
             <ul class="education">
                 <li>
-                    <h3>Diplôme - Établissement</h3>
-                    <p>Années: 20XX - 20YY</p>
-                    <p>Description du diplôme et des études.</p>
+                    <div class="card">
+                        <h3>Diplôme - Établissement</h3>
+                        <p>Années: 20XX - 20YY</p>
+                        <p>Description du diplôme et des études. Formation approfondie en [domaine d'étude].</p>
+                    </div>
                 </li>
             </ul>
         </section>
-    </div>
 
-    <div class="contact-info">
-        <div>
-            <h3>Email</h3>
-            <a href="mailto:email@example.com">email@example.com</a>
-        </div>
-        <div>
-            <h3>Téléphone</h3>
-            <p>+33 1 23 45 67 89</p>
-        </div>
-        <div>
-            <h3>LinkedIn</h3>
-            <a href="https://www.linkedin.com/in/votreprofil" target="_blank">Votre Profil LinkedIn</a>
-        </div>
+        <section id="contact">
+            <h2>Contact</h2>
+            <div class="contact-info">
+                <div>
+                    <h3>Email</h3>
+                    <a href="mailto:email@example.com">email@example.com</a>
+                </div>
+                <div>
+                    <h3>Téléphone</h3>
+                    <p>+33 1 23 45 67 89</p>
+                </div>
+                <div>
+                    <h3>LinkedIn</h3>
+                    <a href="https://www.linkedin.com/in/votreprofil" target="_blank">Votre Profil LinkedIn</a>
+                </div>
+            </div>
+        </section>
     </div>
 
     <footer>
         <p>&copy; 2024 Votre Nom - Tous droits réservés</p>
     </footer>
+
+    <script>
+        // Script pour changer les onglets
+        const tabs = document.querySelectorAll('.tab');
+        const sections = document.querySelectorAll('section');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', function() {
+                // Retirer la classe 'active' de tous les onglets
+                tabs.forEach(tab => tab.classList.remove('active'));
+                // Ajouter la classe 'active' à l'onglet cliqué
+                tab.classList.add('active');
+
+                // Afficher la section correspondante
+                const target = tab.getAttribute('href').substring(1);
+                sections.forEach(section => {
+                    if (section.id === target) {
+                        section.style.display = 'block';
+                    } else {
+                        section.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Initialiser l'affichage des sections (afficher la section "À propos" par défaut)
+        sections.forEach((section, index) => {
+            if (index > 0) section.style.display = 'none';
+        });
+    </script>
 </body>
 </html>
+
