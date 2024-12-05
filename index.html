@@ -1,9 +1,134 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Titre de la page</title>
-  </head>
-  <body>
-    <!-- Contenu de la page -->
-  </body>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon CV - Votre Nom</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #333;
+        }
+        section {
+            margin-bottom: 20px;
+        }
+        .skills, .experience, .education {
+            list-style-type: none;
+            padding: 0;
+        }
+        .skills li, .experience li, .education li {
+            background-color: #f4f4f4;
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+        .contact-info {
+            display: flex;
+            justify-content: space-around;
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+        }
+        .contact-info a {
+            color: #fff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Mon CV - Votre Nom</h1>
+    </header>
+
+    <div class="container">
+        <section>
+            <h2>À propos de moi</h2>
+            <p>Bonjour, je suis [Votre Nom], un(e) professionnel(le) passionné(e) par [domaine d'activité]. Mon parcours m'a permis de développer une expertise en [compétences principales]. Je cherche toujours à relever de nouveaux défis et à évoluer dans ma carrière.</p>
+        </section>
+
+        <section>
+            <h2>Compétences</h2>
+            <ul class="skills">
+                <li>Compétence 1</li>
+                <li>Compétence 2</li>
+                <li>Compétence 3</li>
+                <li>Compétence 4</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Expérience professionnelle</h2>
+            <ul class="experience">
+                <li>
+                    <h3>Poste 1 - Entreprise</h3>
+                    <p>Années: 20XX - 20YY</p>
+                    <p>Description du poste et des responsabilités.</p>
+                </li>
+                <li>
+                    <h3>Poste 2 - Entreprise</h3>
+                    <p>Années: 20YY - 20ZZ</p>
+                    <p>Description du poste et des responsabilités.</p>
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Éducation</h2>
+            <ul class="education">
+                <li>
+                    <h3>Diplôme - Établissement</h3>
+                    <p>Années: 20XX - 20YY</p>
+                    <p>Description du diplôme et des études.</p>
+                </li>
+            </ul>
+        </section>
+    </div>
+
+    <div class="contact-info">
+        <div>
+            <h3>Email</h3>
+            <a href="mailto:email@example.com">email@example.com</a>
+        </div>
+        <div>
+            <h3>Téléphone</h3>
+            <p>+33 1 23 45 67 89</p>
+        </div>
+        <div>
+            <h3>LinkedIn</h3>
+            <a href="https://www.linkedin.com/in/votreprofil" target="_blank">Votre Profil LinkedIn</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Votre Nom - Tous droits réservés</p>
+    </footer>
+</body>
 </html>
