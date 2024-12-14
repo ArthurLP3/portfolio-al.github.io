@@ -1,1 +1,382 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio CV - Arthur Leclercq</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Styles généraux */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #f3f4f6, #dbe4ed);
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, #0066cc, #003399);
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+            position: relative;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        }
+
+        header h1 {
+            font-size: 3.5rem;
+            margin: 0;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+        }
+
+        header p {
+            font-size: 1.4rem;
+            margin: 20px 0 0;
+        }
+
+        .profile-photo {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            border: 5px solid white;
+            overflow: hidden;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+        }
+
+        .profile-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #003399;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: 600;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #0056cc;
+            transform: translateY(-2px);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 40px;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        h2 {
+            font-size: 2.8rem;
+            color: #0066cc;
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        h2::after {
+            content: "";
+            width: 100px;
+            height: 5px;
+            background: linear-gradient(135deg, #ff6666, #ff3333);
+            display: block;
+            margin: 20px auto;
+            border-radius: 3px;
+        }
+
+        .section {
+            display: none;
+            animation: slideIn 0.5s ease-in-out;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        ul li {
+            background: linear-gradient(90deg, #f9f9f9, #ffffff);
+            margin-bottom: 20px;
+            padding: 25px;
+            border-left: 6px solid #0066cc;
+            border-radius: 10px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        ul li:hover {
+            background: linear-gradient(90deg, #e6f5ff, #f0faff);
+            transform: scale(1.05);
+            border-left: 6px solid #ff3333;
+        }
+
+        .contact a {
+            color: #ff3333;
+            font-weight: bold;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact a:hover {
+            color: #ff6666;
+        }
+
+        footer {
+            text-align: center;
+            background-color: #0066cc;
+            color: white;
+            padding: 30px;
+            margin-top: 40px;
+            clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+            box-shadow: 0 -6px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 1rem;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        #typewriter {
+            font-size: 1.8rem;
+            text-align: center;
+            color: #0066cc;
+            margin-top: 40px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        #ball {
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            background: radial-gradient(circle, #ff3333, #cc0000);
+            border-radius: 50%;
+            pointer-events: none;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: transform 0.1s ease;
+        }
+
+        @media (max-width: 768px) {
+            h2 {
+                font-size: 2.4rem;
+            }
+
+            nav a {
+                padding: 10px 15px;
+                font-size: 1rem;
+            }
+
+            .profile-photo {
+                width: 100px;
+                height: 100px;
+            }
+
+            .container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="profile-photo">
+            <img src="IMG_4965.jpg" alt="Photo de profil">
+        </div>
+        <h1>Portfolio CV - Arthur Leclercq</h1>
+        <p>Étudiant en Licence Professionnelle Commercialisation des Produits et Services Sportifs</p>
+        <div id="typewriter"></div>
+    </header>
+
+    <nav>
+        <a href="#" class="nav-link" data-target="about">À Propos</a>
+        <a href="#" class="nav-link" data-target="experience">Expérience</a>
+        <a href="#" class="nav-link" data-target="skills">Compétences</a>
+        <a href="#" class="nav-link" data-target="interests">Centres d'Intérêt</a>
+        <a href="#" class="nav-link" data-target="contact">Contact</a>
+        <a href="#" class="nav-link" data-target="projects">Projets</a>
+        <a href="#" class="nav-link" data-target="testimonials">Témoignages</a>
+    </nav>
+
+    <div class="container">
+        <div id="about" class="section active">
+            <h2>À Propos</h2>
+            <p>Bonjour, je m'appelle Arthur Leclercq. Né le 28 septembre 2004, je suis actuellement étudiant en Licence Professionnelle Commercialisation des Produits et Services Sportifs à l'ILEPS. Je suis passionné par le sport, le développement personnel, et les expériences professionnelles enrichissantes.</p>
+        </div>
+
+        <div id="experience" class="section">
+            <h2>Expérience Professionnelle</h2>
+            <ul>
+                <li>
+                    <h3>Vendeur - Intersport</h3>
+                    <p><strong>Durée :</strong> Avril 2023</p>
+                    <p><strong>Tâches :</strong> Mise en rayon, conseil clients, préparation de commandes, merchandising, réception, mise en place d'opérations commerciales.</p>
+                </li>
+                <li>
+                    <h3>Vendeur - Decathlon</h3>
+                    <p><strong>Durée :</strong> Décembre 2022 - Janvier 2023</p>
+                    <p><strong>Tâches :</strong> Mise en rayon, tenue du rayon, conseil clients, préparation de commandes, réception, mise en place d'opérations commerciales.</p>
+                </li>
+                <li>
+                    <h3>Employé Administratif - Service administratif du trésor public</h3>
+                    <p><strong>Durée :</strong> Juillet 2022</p>
+                    <p><strong>Tâches :</strong> Classement, rangement, archivage.</p>
+                </li>
+            </ul>
+        </div>
+
+        <div id="skills" class="section">
+            <h2>Compétences</h2>
+            <ul>
+                <li>Qualité rédactionnelle</li>
+                <li>Travail en équipe</li>
+                <li>Maîtrise d'outils informatiques : PowerPoint, Word, Excel, Teams</li>
+                <li>Adaptabilité et autonomie</li>
+                <li>Bon relationnel</li>
+            </ul>
+        </div>
+
+        <div id="interests" class="section">
+            <h2>Centres d'Intérêt</h2>
+            <ul>
+                <li>Volley-ball (pratique en compétition)</li>
+                <li>Voyages : Angleterre (séjour linguistique), République Dominicaine (séjour touristique)</li>
+                <li>Réseaux sociaux</li>
+            </ul>
+        </div>
+
+        <div id="contact" class="section">
+            <h2>Contact</h2>
+            <div class="contact">
+                <p><strong>Email :</strong> <a href="mailto:arthur95.leclercq@sfr.fr">arthur95.leclercq@sfr.fr</a></p>
+                <p><strong>Téléphone :</strong> 06 20 47 35 09</p>
+                <p><strong>LinkedIn :</strong> <a href="https://www.linkedin.com/in/Arthur%20Leclercq" target="_blank">linkedin.com/in/Arthur-Leclercq</a></p>
+            </div>
+        </div>
+
+        <div id="projects" class="section">
+            <h2>Projets</h2>
+            <ul>
+                <li>
+                    <h3>Projet Marketing Digital</h3>
+                    <p>Création et gestion d'une campagne digitale pour une marque de sport, avec une augmentation de 30% des interactions en ligne.</p>
+                </li>
+                <li>
+                    <h3>Application Mobile</h3>
+                    <p>Développement d'une application de suivi sportif, intégrant des outils d'analyse de performances et des conseils personnalisés.</p>
+                </li>
+            </ul>
+        </div>
+
+        <div id="testimonials" class="section">
+            <h2>Témoignages</h2>
+            <p><em>"Arthur est un étudiant brillant et un coéquipier motivé, capable de s'adapter rapidement à différents défis."</em> - Professeur à l'ILEPS</p>
+            <p><em>"Son expertise en marketing sportif et son attitude proactive ont eu un impact significatif dans notre projet."</em> - Manager chez Intersport</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Portfolio CV - Arthur Leclercq. Tous droits réservés.</p>
+    </footer>
+
+    <div id="ball"></div>
+
+    <!-- Scripts -->
+    <script>
+        // Animation d'accueil (typing effect)
+        const text = "Bienvenue sur mon Portfolio - Arthur Leclercq !";
+        let index = 0;
+        function typeEffect() {
+            if (index < text.length) {
+                document.getElementById("typewriter").innerHTML += text.charAt(index);
+                index++;
+                setTimeout(typeEffect, 100);
+            }
+        }
+        window.onload = typeEffect;
+
+        // Balle interactive
+        document.addEventListener("mousemove", (e) => {
+            const ball = document.getElementById("ball");
+            ball.style.top = e.clientY + "px";
+            ball.style.left = e.clientX + "px";
+        });
+
+        // Navigation des sections
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelectorAll('.section').forEach(section => {
+                    section.classList.remove('active');
+                });
+                document.getElementById(this.dataset.target).classList.add('active');
+            });
+        });
+
+        // Effet interactif sur la balle
+        document.addEventListener("mousedown", () => {
+            const ball = document.getElementById("ball");
+            ball.style.transform = "scale(1.5)";
+        });
+
+        document.addEventListener("mouseup", () => {
+            const ball = document.getElementById("ball");
+            ball.style.transform = "scale(1)";
+        });
+    </script>
+</body>
+
+</html>
 
